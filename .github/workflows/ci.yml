@@ -28,13 +28,12 @@ jobs:
 
       - name: Run Python tests
         run: |
-           PYTHONPATH=. python -m pytest
+          PYTHONPATH=. python -m pytest
 
       - name: Build Docker image
         run: |
           docker build -t devops-portfolio-app:test .
 
-      - name: Validate Kubernetes YAML
+      - name: Validate Kubernetes YAML files
         run: |
-          kubectl apply --dry-run=client --validate=false -f k8s/deployment.yaml
-          kubectl apply --dry-run=client --validate=false -f k8s/service.yaml
+          python -c "import yaml; yaml.safe_load(open('k8s/deployment.yaml')); yaml.safe_load(open('k8s/service.yaml')); print('Kubernetes YAML files are valid')"

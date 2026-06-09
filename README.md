@@ -73,3 +73,30 @@ kubectl get deployments
 kubectl get pods
 kubectl get services
 kubectl port-forward service/devops-portfolio-service 8080:80
+
+
+### Stage 5: Monitoring, Logging, and Resource Management
+
+Added basic Kubernetes observability and resource management practices.
+
+Completed:
+
+- Used `kubectl get pods` to verify pod status
+- Used `kubectl logs` to inspect application logs
+- Used `kubectl describe deployment` to inspect deployment configuration
+- Used `kubectl get events` to review cluster activity
+- Added CPU and memory requests/limits to the Kubernetes Deployment
+- Verified rollout after updating Kubernetes manifests
+- Re-tested the application using `kubectl port-forward`
+
+Useful commands:
+
+```bash
+kubectl get pods
+kubectl get deployment devops-portfolio-app
+kubectl get service devops-portfolio-service
+kubectl logs deployment/devops-portfolio-app
+kubectl describe deployment devops-portfolio-app
+kubectl get events --sort-by=.metadata.creationTimestamp
+kubectl rollout status deployment/devops-portfolio-app
+kubectl port-forward service/devops-portfolio-service 8080:80

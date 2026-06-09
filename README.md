@@ -100,3 +100,14 @@ kubectl describe deployment devops-portfolio-app
 kubectl get events --sort-by=.metadata.creationTimestamp
 kubectl rollout status deployment/devops-portfolio-app
 kubectl port-forward service/devops-portfolio-service 8080:80
+
+### AWS Cost Cleanup
+
+After testing the AWS ECR workflow, the ECR repository was deleted to avoid ongoing AWS storage charges.
+
+Cleanup commands used:
+
+```bash
+aws ecr delete-repository --repository-name devops-portfolio-app --region us-east-1 --force
+terraform state rm aws_ecr_repository.app_repository
+terraform destroy

@@ -28,7 +28,7 @@ jobs:
 
       - name: Run Python tests
         run: |
-          pytest
+           PYTHONPATH=. python -m pytest
 
       - name: Build Docker image
         run: |

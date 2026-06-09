@@ -35,6 +35,6 @@ jobs:
           docker build -t devops-portfolio-app:test .
 
       - name: Validate Kubernetes YAML
-       run: |
+        run: |
           kubectl apply --dry-run=client --validate=false -f k8s/deployment.yaml
           kubectl apply --dry-run=client --validate=false -f k8s/service.yaml

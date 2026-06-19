@@ -37,7 +37,7 @@ flowchart LR
 
 ## Demo
 
-![Kubernetes pods running](kubectl-pods.png)
+![Kubernetes pods running](kubectl-pods.png.jpg)
 
 *Two replicas running and healthy on the Kubernetes cluster.*
 

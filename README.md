@@ -35,6 +35,12 @@ flowchart LR
 - **Kubernetes** runs the image with **2 replicas**, readiness/liveness probes on `/health`, and CPU/memory requests and limits.
 - **GitHub Actions** runs a 4-stage pipeline on every commit: unit tests → Docker build → Kubernetes manifest validation → push.
 
+## Demo
+
+![Kubernetes pods running](kubectl-pods.png)
+
+*Two replicas running and healthy on the Kubernetes cluster.*
+
 ## Run it locally
 
 ```bash
